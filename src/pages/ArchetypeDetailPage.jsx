@@ -9,17 +9,17 @@ export default function ArchetypeDetailPage({ archetype, onBack, onStart }) {
   return (
     <Shell className="detail-shell">
       <section className="detail-card reveal" style={{ '--accent': theme.color, '--glow': theme.glow }}>
-        <header className="section-header">
-          <div>
-            <p className="eyebrow">原型详情</p>
-            <h1>{archetype.name}</h1>
+        <header className="section-header detail-header">
+          <div className="detail-heading">
+            <p className="eyebrow detail-eyebrow">原型详情</p>
+            <h1 className="detail-name">{archetype.name}</h1>
           </div>
           <GhostButton onClick={onBack}>返回</GhostButton>
         </header>
 
         <p className="detail-definition">{archetype.definition}</p>
 
-        <div className="tag-row">
+        <div className="tag-row detail-tags">
           <Tag tone="gold">五行 · {archetype.element}</Tag>
           <Tag tone="ink">阴阳 · {archetype.polarity}</Tag>
           <Tag tone="jade">强弱 · 身{archetype.energy}</Tag>
