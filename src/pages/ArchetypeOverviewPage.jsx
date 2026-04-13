@@ -9,7 +9,10 @@ export default function ArchetypeOverviewPage({ archetypes, onBack, onOpenDetail
         <header className="section-header">
           <div>
             <p className="eyebrow">20 型原型</p>
-            <h1>东方人格原型总览</h1>
+            <h1 className="gallery-title">
+              <span>东方人格</span>
+              <span>原型总览</span>
+            </h1>
           </div>
           <GhostButton onClick={onBack}>返回</GhostButton>
         </header>

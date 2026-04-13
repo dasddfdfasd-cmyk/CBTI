@@ -145,6 +145,12 @@ button {
   display: block;
 }
 
+.section-header .button-ghost {
+  width: auto;
+  min-width: 140px;
+  flex-shrink: 0;
+}
+
 .hero-subtitle {
   margin: 0 0 18px;
   font-size: clamp(18px, 3vw, 28px);
@@ -631,6 +637,16 @@ button {
   .gallery-title {
     font-size: 42px !important;
     line-height: 0.96 !important;
+    white-space: nowrap;
+  }
+
+  .gallery-title span {
+    display: inline;
+  }
+
+  .gallery-title span + span::before {
+    content: "";
+    display: block;
   }
 
   .orbit-ring-one {
