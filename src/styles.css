@@ -137,7 +137,7 @@ button {
 .gallery-title {
   margin: 10px 0 8px;
   font-size: clamp(30px, 8vw, 48px) !important;
-  line-height: 0.94 !important;
+  line-height: 1.04 !important;
   font-weight: 620 !important;
 }
 
@@ -636,7 +636,7 @@ button {
 
   .gallery-title {
     font-size: 42px !important;
-    line-height: 0.96 !important;
+    line-height: 1.08 !important;
     white-space: nowrap;
   }
 
