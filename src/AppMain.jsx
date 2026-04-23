@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { archetypes } from './data/archetypes';
+import { archetypesDetailed as archetypes } from './data/archetypesDetailed';
 import { cbtiConfig } from './data/cbtiConfig';
 import { getProgressPercent, getResultFromAnswers } from './data/cbtiScoring';
 import HomePage from './pages/HomePage';
