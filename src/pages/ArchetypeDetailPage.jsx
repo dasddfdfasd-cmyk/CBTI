@@ -17,33 +17,35 @@ export default function ArchetypeDetailPage({ archetype, onBack, onStart }) {
           <GhostButton onClick={onBack}>返回</GhostButton>
         </header>
 
-        <p className="detail-definition">{archetype.definition}</p>
-
         <div className="tag-row detail-tags">
           <Tag tone="gold">五行 · {archetype.element}</Tag>
           <Tag tone="ink">阴阳 · {archetype.polarity}</Tag>
-          <Tag tone="jade">强弱 · 身{archetype.energy}</Tag>
+          <Tag tone="jade">强弱 · {archetype.energy}</Tag>
         </div>
 
         <div className="detail-grid">
           <section className="detail-block">
             <h2>维度结构</h2>
             <p>
-              {archetype.element} / {archetype.polarity} / 身{archetype.energy}
+              {archetype.element} / {archetype.polarity} / {archetype.energy}
             </p>
           </section>
-          <section className="detail-block">
+
+          <section className="detail-block detail-block-full">
             <h2>核心特征</h2>
-            <p>{archetype.traits.join('、')}</p>
+            <p>{archetype.coreFeatures}</p>
           </section>
+
           <section className="detail-block">
             <h2>关系风格</h2>
             <p>{archetype.relationshipStyle}</p>
           </section>
+
           <section className="detail-block">
             <h2>失衡状态</h2>
             <p>{archetype.imbalance}</p>
           </section>
+
           <section className="detail-block detail-block-full">
             <h2>适合方向</h2>
             <p>{archetype.suitableDirections}</p>
