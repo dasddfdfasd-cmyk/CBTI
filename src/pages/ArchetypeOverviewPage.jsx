@@ -19,17 +19,12 @@ export default function ArchetypeOverviewPage({ archetypes, onBack, onOpenDetail
 
         <div className="archetype-grid">
           {archetypes.map((item) => (
-            <button
-              key={item.id}
-              className="archetype-tile"
-              onClick={() => onOpenDetail(item.id)}
-            >
+            <button key={item.id} className="archetype-tile" onClick={() => onOpenDetail(item.id)}>
               <div>
                 <p className="tile-meta">
                   {item.element} / {item.polarity} / {item.energy}
                 </p>
                 <h2>{item.name}</h2>
-                <p>{item.definition}</p>
               </div>
               <div className="tag-row">
                 <Tag tone="gold">{item.element}</Tag>
