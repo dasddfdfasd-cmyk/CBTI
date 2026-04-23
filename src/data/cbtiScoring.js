@@ -1,4 +1,4 @@
-import { archetypes } from './archetypes';
+import { archetypesDetailed as archetypes } from './archetypesDetailed';
 import { cbtiConfig } from './cbtiConfig';
 
 const zhMap = {
@@ -57,11 +57,7 @@ function findDetailedArchetype(primaryWuxing, yinyangType, strengthType, mappedN
       polarity: zhMap.yinyang[yinyangType],
       energy: zhMap.strength[strengthType],
       name: mappedName,
-      tagline: mappedName,
-      definition: '',
-      keywords: [],
-      analysis: '',
-      traits: [],
+      coreFeatures: '',
       relationshipStyle: '',
       imbalance: '',
       suitableDirections: ''
@@ -120,8 +116,7 @@ export function getResultFromAnswers(questions, answers) {
     yinyangGap,
     strengthGap,
     finalType: mapping.name,
-    finalOneLiner: mapping.oneLiner,
-    archetype: { ...detailedArchetype, name: mapping.name, tagline: mapping.oneLiner },
+    archetype: { ...detailedArchetype, name: mapping.name },
     labels: {
       primaryWuxing: zhMap.wuxing[primaryWuxing],
       secondaryWuxing: zhMap.wuxing[secondaryWuxing],
@@ -129,7 +124,10 @@ export function getResultFromAnswers(questions, answers) {
       strength: zhMap.strength[strengthType],
       yinyangDetail: getSoftLabel(yinyangType, yinyangGap, cbtiConfig.resultRules.yinyangRule.labels, cbtiConfig.resultRules.yinyangRule.softLabelThreshold),
       strengthDetail: cbtiConfig.resultRules.strengthRule.displayLabels[strengthType].display,
-      wuxingInterpretation: wuxingGap <= cbtiConfig.resultRules.wuxingGapRule.thresholds.dualActive ? cbtiConfig.resultRules.wuxingGapRule.interpretation['<=2'] : cbtiConfig.resultRules.wuxingGapRule.interpretation['>=3'],
+      wuxingInterpretation:
+        wuxingGap <= cbtiConfig.resultRules.wuxingGapRule.thresholds.dualActive
+          ? cbtiConfig.resultRules.wuxingGapRule.interpretation['<=2']
+          : cbtiConfig.resultRules.wuxingGapRule.interpretation['>=3'],
       confidence: cbtiConfig.resultRules.confidenceRule.labels[confidenceLevel]
     },
     confidenceLevel,
