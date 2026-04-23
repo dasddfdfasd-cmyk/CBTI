@@ -16,9 +16,8 @@ export default function ResultPageMain({ result, onRestart, onOpenGallery, onOpe
 
         <div className="result-hero">
           <div>
-            <p className="result-name-en">{`${result.primaryWuxing} · ${result.yinyangType} · ${result.strengthType}`}</p>
+            <p className="result-name-en">{`${result.primaryWuxing} / ${result.yinyangType} / ${result.strengthType}`}</p>
             <h1>{result.finalType}</h1>
-            <p className="result-tagline">{result.finalOneLiner}</p>
           </div>
           <div className="result-seal">
             <span>{result.labels.primaryWuxing}</span>
@@ -42,14 +41,26 @@ export default function ResultPageMain({ result, onRestart, onOpenGallery, onOpe
 
         <section className="result-section">
           <h2>主副五行结构</h2>
-          <p>{result.labels.primaryWuxing} 为主相，{result.labels.secondaryWuxing} 为副相，五行差值为 {result.wuxingGap}。</p>
+          <p>
+            {result.labels.primaryWuxing} 为主相，{result.labels.secondaryWuxing} 为副相，五行差值为 {result.wuxingGap}。
+          </p>
           {result.secondaryNarrative ? <p>{result.secondaryNarrative}</p> : null}
         </section>
 
         <section className="result-section">
-          <h2>人格说明</h2>
-          <p>{result.archetype.definition || result.finalOneLiner}</p>
-          {result.archetype.analysis ? <p>{result.archetype.analysis}</p> : null}
+          <h2>核心气质</h2>
+          <p>{result.archetype.coreFeatures}</p>
+        </section>
+
+        <section className="result-section">
+          <h2>关系与压力</h2>
+          <p>{result.archetype.relationshipStyle}</p>
+          <p>{result.archetype.imbalance}</p>
+        </section>
+
+        <section className="result-section">
+          <h2>适合方向</h2>
+          <p>{result.archetype.suitableDirections}</p>
         </section>
 
         <div className="result-actions">
